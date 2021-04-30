@@ -1,0 +1,16 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open"
+  },
+  "author": "saima",
+  "license": "ISC",
+  "devDependencies": {
+    "@webpack-cli/serve": "^1.3.1"
+  }
+}
