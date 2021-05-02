@@ -19,4 +19,29 @@
 .flex-col{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  
 }
+
+.item{
+  padding-top: 15px;
+}
+
+.weathericon{
+  width: 100px;
+  height: 100px;
+  
+}
+
+.hidden{
+  display: none;
+}
+
+.visible{
+  display: inherit;
+}
+
+.mr-10{
+  margin-right: 10px;
+}
+
