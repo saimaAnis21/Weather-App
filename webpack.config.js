@@ -12,6 +12,6 @@ module.exports = {
     contentBase: './dist',
   },
   plugins: [
-    new Dotenv()
-  ]
+    new Dotenv(),
+  ],
 };
