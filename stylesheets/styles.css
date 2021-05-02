@@ -1,0 +1,22 @@
+.border-style{
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+#content{
+  text-align: center;
+  padding: 20px;
+}
+
+#weatherdata{
+  border-color: blue;
+  width: 50%;
+  margin: auto;
+  
+}
+
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}

@@ -1,14 +1,29 @@
-let contentdiv = document.getElementById("content");
+import { errordiv, cityinput, citybtn, datadiv, form } from './DOMelements';
+import { getData } from './weatherinfo';
+//require('dotenv');
+//console.log(process.env.API_KEY);
 
-let city = "sydney";
+  const weatherdiv = document.getElementById("weatherdata");
 
-let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=54c6bcf0d3d2d963d92771c4eeb2136f`;
+  weatherdiv.appendChild(errordiv);
+  weatherdiv.appendChild(cityinput);
+  weatherdiv.appendChild(citybtn);
+  weatherdiv.appendChild(datadiv);
 
-fetch(url, {
-    method: 'GET'
-    
-})
-.then(response => response.json())
-.then(data =>{ 
-    console.log(data);
- })
+  let weatherdata = "";
+  citybtn.addEventListener('click', async () => {
+    let city = "";
+    if(cityinput.value===""){
+      city = "karachi";
+    }
+    else{
+      city = cityinput.value;
+    }
+    const dataobj = await getData(city);
+    const data = dataobj;
+    weatherdata = data["main"].temp;
+    datadiv.innerText = weatherdata;
+
+  });
+
+
