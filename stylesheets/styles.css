@@ -10,27 +10,42 @@
 }
 
 #weatherdata{
-  border-color: blue;
+ 
   width: 50%;
   margin: auto;
   
+}
+
+.flex-row{
+  display: flex;
+  align-items: center;
+ 
+  justify-content: center;
+
 }
 
 .flex-col{
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+  border: 2px;
+ 
 }
 
-.item{
-  padding-top: 15px;
+.item-fr{
+  margin: 15px;
+  font-size: 20px;
+}
+
+.item-fc{
+  margin-top: 15px;
+  
 }
 
 .weathericon{
   width: 100px;
   height: 100px;
-  
+ 
 }
 
 .hidden{
