@@ -1,6 +1,6 @@
 // const apikey = process.env.API_KEY;
 
-import API_KEY from './apikey';
+import API_KEY from './apikey';//eslint-disable-line
 
 const apikey = API_KEY;
 const getData = async (city) => {
