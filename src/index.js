@@ -51,8 +51,8 @@ const toggleunit = () => {
 };
 
 const getDataFromApi = async () => {
-  let city = cityinput.value;
-  
+  const city = cityinput.value;
+
   const dataobj = await getData(city);
   const data = await dataobj;
   citydata = await data.name;
@@ -65,14 +65,13 @@ const getDataFromApi = async () => {
   tempunitbtn.classList.add('visible');
   unit = 'c';
   populatedata();
-}
+};
 
-window.addEventListener('load', 
-  function() { 
+window.addEventListener('load',
+  () => {
     getDataFromApi();
   }, false);
 
-  
 
 citybtn.addEventListener('click', () => {
   getDataFromApi();
