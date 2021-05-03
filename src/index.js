@@ -5,8 +5,7 @@ import {
 import getData from './weatherinfo';
 import '../stylesheets/css-reset.css';
 import '../stylesheets/styles.css';
-// require('dotenv').config;
-// console.log(process.env.API_KEY);
+
 
 let citydata = '';
 let icon = '';
@@ -51,14 +50,9 @@ const toggleunit = () => {
   populatedata();
 };
 
-
-citybtn.addEventListener('click', async () => {
-  let city = '';
-  if (cityinput.value === '') {
-    city = 'karachi';
-  } else {
-    city = cityinput.value;
-  }
+const getDataFromApi = async () => {
+  let city = cityinput.value;
+  
   const dataobj = await getData(city);
   const data = await dataobj;
   citydata = await data.name;
@@ -71,6 +65,17 @@ citybtn.addEventListener('click', async () => {
   tempunitbtn.classList.add('visible');
   unit = 'c';
   populatedata();
+}
+
+window.addEventListener('load', 
+  function() { 
+    getDataFromApi();
+  }, false);
+
+  
+
+citybtn.addEventListener('click', () => {
+  getDataFromApi();
 });
 
 tempunitbtn.addEventListener('click', () => {
