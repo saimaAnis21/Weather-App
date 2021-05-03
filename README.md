@@ -8,6 +8,8 @@ A website where:
 - Data is displayed for the user to view
 - Temperature can be viewed in Fahrenheit/Celsius
 
+[LIVE PREVIEW](https://flamboyant-benz-4f699a.netlify.app/)
+
 ![](weatherapp.png)
 
 ## Built With
@@ -33,9 +35,9 @@ If you want to repack the file
 Else
 - Just Go to the dist folder and open index.html
 - get an apikey from [OpenWeather](https://openweathermap.org/)
-- create a .env file in the root folder
-- Add API_KEY= 'YOUr_API_KEY'
-- npm run start
+- Open the `src/apikey.js` file
+- Add your  API key to the declared constant API_KEY= 'YOUR_API_KEY'
+- Open the terminal, cd into the root directory and execute `npm run start`
 
 ## Prerequisites
 
