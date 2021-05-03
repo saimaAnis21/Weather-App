@@ -3,6 +3,8 @@ import {
   iconimg, tempunitbtn, feelslikespan,
 } from './DOMelements';
 import getData from './weatherinfo';
+import '../stylesheets/css-reset.css';
+import '../stylesheets/styles.css';
 // require('dotenv').config;
 // console.log(process.env.API_KEY);
 
