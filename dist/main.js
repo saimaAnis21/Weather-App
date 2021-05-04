@@ -86,7 +86,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst API_KEY = 'YOUR_API_KEY';\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (API_KEY);\n\n\n//# sourceURL=webpack://weather-app/./src/apikey.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst API_KEY = '54c6bcf0d3d2d963d92771c4eeb2136f';\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (API_KEY);\n\n\n//# sourceURL=webpack://weather-app/./src/apikey.js?");
 
 /***/ }),
 
@@ -106,7 +106,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _DOM
   \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/apikey.js\");\n\n\nconst apikey = _apikey__WEBPACK_IMPORTED_MODULE_0__.default;\n\nconst getcity = async () => {\n  const responsegeoloc = await fetch('https://ip-api.com/json/?fields=city', {\n    method: 'GET',\n    mode: 'cors',\n\n  });\n  const latlondata = await responsegeoloc.json();\n  return latlondata;\n};\n\n\nconst getData = async (city) => {\n  if (city === '') {\n    const cityobj = await getcity();\n    city = cityobj.city;\n  }\n  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`;\n\n  const response = await fetch(url, {\n    method: 'GET',\n    mode: 'cors',\n\n  });\n  const data = response.json();\n  return data;\n};\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://weather-app/./src/weatherinfo.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _apikey__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apikey */ \"./src/apikey.js\");\n\n\nconst apikey = _apikey__WEBPACK_IMPORTED_MODULE_0__.default;\n\nconst getcity = async () => {\n  const responsegeoloc = await fetch('http://ip-api.com/json/?fields=city', {\n    method: 'GET',\n    mode: 'cors',\n\n  });\n  const latlondata = await responsegeoloc.json();\n  return latlondata;\n};\n\n\nconst getData = async (city) => {\n  if (city === '') {\n    const cityobj = await getcity();\n    city = cityobj.city;\n  }\n  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apikey}`;\n\n  const response = await fetch(url, {\n    method: 'GET',\n    mode: 'cors',\n\n  });\n  const data = response.json();\n  return data;\n};\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n//# sourceURL=webpack://weather-app/./src/weatherinfo.js?");
 
 /***/ })
 

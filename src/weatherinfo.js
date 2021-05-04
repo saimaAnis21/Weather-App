@@ -3,7 +3,7 @@ import API_KEY from './apikey';
 const apikey = API_KEY;
 
 const getcity = async () => {
-  const responsegeoloc = await fetch('https://ip-api.com/json/?fields=city', {
+  const responsegeoloc = await fetch('http://ip-api.com/json/?fields=city', {
     method: 'GET',
     mode: 'cors',
 
