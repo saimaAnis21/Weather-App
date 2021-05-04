@@ -23,7 +23,7 @@ weatherdiv.appendChild(datadiv);
 
 const populatedata = () => {
   cityspan.innerHTML = `${citydata}`;
-  iconimg.src = ` http://openweathermap.org/img/wn/${icon}@2x.png`;
+  iconimg.src = ` https://openweathermap.org/img/wn/${icon}@2x.png`;
   let unitdisplay = '';
   if (unit === 'c') {
     unitdisplay = '&#8451;';
