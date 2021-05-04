@@ -1,5 +1,5 @@
 import {
-  cityinput, citybtn, datadiv, cityspan, tempspan, weatherspan,
+  errordiv, cityinput, citybtn, datadiv, cityspan, tempspan, weatherspan,
   iconimg, tempunitbtn, feelslikespan,
 } from './DOMelements';
 import getData from './weatherinfo';
@@ -17,6 +17,7 @@ let feelslike = '';
 let unit = '';
 
 const weatherdiv = document.getElementById('weatherdata');
+weatherdiv.appendChild(errordiv);
 weatherdiv.appendChild(cityinput);
 weatherdiv.appendChild(citybtn);
 weatherdiv.appendChild(datadiv);
@@ -54,17 +55,20 @@ const getDataFromApi = async () => {
   const city = cityinput.value;
 
   const dataobj = await getData(city);
-  const data = await dataobj;
-  citydata = await data.name;
-  icon = data.weather[0].icon;
-  temp = data.main.temp;
-  weather = data.weather[0].main;
-  desc = data.weather[0].description;
-  feelslike = data.main.feels_like;
-  iconimg.classList.add('visible');
-  tempunitbtn.classList.add('visible');
-  unit = 'c';
-  populatedata();
+  const data = dataobj;
+
+  if (data.cod === 200) {
+    citydata = data.name;
+    icon = data.weather[0].icon;
+    temp = data.main.temp;
+    weather = data.weather[0].main;
+    desc = data.weather[0].description;
+    feelslike = data.main.feels_like;
+    iconimg.classList.add('visible');
+    tempunitbtn.classList.add('visible');
+    unit = 'c';
+    populatedata();
+  }
 };
 
 window.addEventListener('load',

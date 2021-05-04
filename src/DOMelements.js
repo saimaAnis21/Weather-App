@@ -1,4 +1,7 @@
 
+const errordiv = document.createElement('div');
+errordiv.setAttribute('class', 'error');
+
 const form = document.createElement('form');
 form.setAttribute('method', 'post');
 
@@ -57,6 +60,6 @@ datadiv.appendChild(div1);
 datadiv.appendChild(div2);
 
 export {
-  cityinput, citybtn, datadiv, form, tempspan, weatherspan, cityspan, iconimg,
+  errordiv, cityinput, citybtn, datadiv, form, tempspan, weatherspan, cityspan, iconimg,
   tempunitbtn, feelslikespan,
 };
