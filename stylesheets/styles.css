@@ -1,0 +1,59 @@
+.border-style {
+  border: 2px;
+  border-color: black;
+  border-style: solid;
+}
+
+#content {
+  text-align: center;
+  padding: 20px;
+}
+
+#weatherdata {
+  width: 50%;
+  margin: auto;
+}
+
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px;
+}
+
+.item-fr {
+  margin: 15px;
+  font-size: 20px;
+}
+
+.item-fc {
+  margin-top: 15px;
+}
+
+.weathericon {
+  width: 100px;
+  height: 100px;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: inherit;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
